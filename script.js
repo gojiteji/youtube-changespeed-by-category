@@ -40,7 +40,7 @@ function get_category() {
 
 function set_speed() {
     if (category == "Music" || category == "音楽") {
-        video.playbackRate = 5
+        video.playbackRate = 1.0
     }else{
         video.playbackRate=1
     }

@@ -4,7 +4,9 @@
     "short_name": "YCSC",
     "version": "1.0.0",
     "description": "allowing youtube to change playspeed by category",
-
+    "browser_action": {
+        "default_popup": "options.html"
+        },
     "content_scripts": [
         {
             "matches": [

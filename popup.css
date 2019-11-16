@@ -1,0 +1,18 @@
+body {
+    background: linear-gradient(-90deg, rgb(216, 255, 43), rgb(52, 133, 199));
+    width: 30em;
+  }
+  
+input{
+    position: relative;
+    bottom: -2em;
+width: 30em;
+}
+
+.txt{
+    font-size: 3em;
+}
+
+
+
+
