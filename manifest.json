@@ -8,10 +8,10 @@
     "content_scripts": [
         {
             "matches": [
-                "https://youtube.com/"
+                "https://www.youtube.com/*"
             ],
             "js": [
-                "script.js"
+                "./script.js"
             ]
         }
     ],
