@@ -1,0 +1,25 @@
+{
+    "manifest_version": 2,
+    "name": "youtube change speed by category",
+    "short_name": "YCSC",
+    "version": "1.0.0",
+    "description": "allowing youtube to change playspeed by category",
+
+    "content_scripts": [
+        {
+            "matches": [
+                "https://youtube.com/"
+            ],
+            "js": [
+                "script.js"
+            ]
+        }
+    ],
+    "icons": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
+    "options_page": "options.html",
+    "content_security_policy": "script-src 'self'; object-src 'self'"
+}
