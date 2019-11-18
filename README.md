@@ -7,6 +7,6 @@ If you have anyrequest such as detail category separation, please give me pull r
 1. add this project to chrome extension
 
   ![](./a.png)
-1. open youtube and turn on this function by clicking this icon
+2. open youtube and turn on this function by clicking the icon
 
   ![](./b.png)
