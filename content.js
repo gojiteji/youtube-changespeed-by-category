@@ -1,13 +1,15 @@
-
 category = ""
+speed=1.0
 var video = document.querySelector('video')
+
 /*---- 非遷移ページ用 -----*/
 var href = location.href;
-var observer = new MutationObserver(function(mutations) {
-  if(href !== location.href) {
-    showmore().then(get_category).then(set_speed)
-    href = location.href;
-  }
+var observer = new MutationObserver(function (mutations) {
+    if (href !== location.href) {
+
+        showmore().then(get_category).then(set_speed)
+        href = location.href;
+    }
 });
 
 observer.observe(document, { childList: true, subtree: true });
@@ -16,6 +18,8 @@ observer.observe(document, { childList: true, subtree: true });
 window.onload = function () {
     try {
         //open show more
+
+
         showmore().then(get_category).then(set_speed)//get category
 
     } catch (error) {
@@ -39,9 +43,22 @@ function get_category() {
 }
 
 function set_speed() {
-    if (category == "Music" || category == "音楽") {
-        video.playbackRate = 1.0
-    }else{
-        video.playbackRate=1
+    if (!(category == "Music" || category == "音楽")) {
+        video.playbackRate = speed
+    } else {
+        video.playbackRate = 1
     }
 }
+
+/*
+chrome.runtime.sendMessage(
+    { value: { contents: "test value from contents" } }
+);
+*/
+
+// 受信側 other tab -> contents(popup/option -> contents)
+chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
+    speed=JSON.parse(message).contents
+    showmore().then(get_category).then(set_speed)//メッセが来たら更新
+    return;
+});

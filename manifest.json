@@ -1,11 +1,15 @@
 {
     "manifest_version": 2,
     "name": "youtube change speed by category",
+    "permissions": [
+        "activeTab","tabs","https://cdn.jsdelivr.net/"
+      ],
     "short_name": "YCSC",
+    "content_security_policy": "script-src 'self' 'unsafe-eval' https://cdn.jsdelivr.net; object-src 'self'",
     "version": "1.0.0",
     "description": "allowing youtube to change playspeed by category",
     "browser_action": {
-        "default_popup": "options.html"
+        "default_popup": "popup.html"
         },
     "content_scripts": [
         {
@@ -13,15 +17,22 @@
                 "https://www.youtube.com/*"
             ],
             "js": [
-                "./script.js"
+                "./content.js"
             ]
         }
     ],
+    "web_accessible_resources": [
+        "background.js"
+     ],
+
     "icons": {
         "16": "icon16.png",
         "48": "icon48.png",
         "128": "icon128.png"
     },
-    "options_page": "options.html",
-    "content_security_policy": "script-src 'self'; object-src 'self'"
+    "options_page": "popup.html",
+    "background": {
+        "page": "background.html"
+    }
+
 }
