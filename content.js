@@ -6,7 +6,7 @@ var video = document.querySelector('video')
 var href = location.href;
 var observer = new MutationObserver(function (mutations) {
     if (href !== location.href) {
-
+        video = document.querySelector('video')
         showmore().then(get_category).then(set_speed)
         href = location.href;
     }
